@@ -9,4 +9,24 @@ class BaseModel(models.Model):
 
 class Profile(BaseModel):
     name = models.CharField(max_length=100)
-    image = models.ImageField(max_length=110)
+    image = models.ImageField("Profile/")
+    description = models.TextField()
+
+
+class Social_link(BaseModel):
+    name = models.CharField(max_length=110)
+    icon = models.CharField(max_length=110)
+    url = models.CharField(max_length=110)
+    order = models.PositiveIntegerField()
+
+
+class Post(BaseModel):
+    title = models.CharField(max_length=120)
+    image = models.ImageField("image/")
+    description = models.TextField()
+    body = models.TextField()
+
+
+
+class About(BaseModel):
+    body = models.TextField()
